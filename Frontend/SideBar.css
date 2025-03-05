@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.4);
+    overflow-x: hidden;
+    transition: left 0.3s ease, box-shadow 0.3s ease;
+    padding-top: 60px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.sidebar a {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    transition: background 0.3s ease, padding-left 0.3s ease;
+    border-radius: 10px;
+    margin: 5px 10px;
+}
+
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    padding-left: 30px;
+}
+
+.hamburger {
+    position: fixed;
+    top: 15px;
+    left: 25px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+    transform: scale(1.2);
+}
+
+.content {
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+    margin-left: 0;
+}
+
+.sidebar.active {
+    left: 0;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.content.shifted {
+    margin-left: 250px;
+}

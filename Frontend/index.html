@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Food Donation Platform</title>
+    <link rel="stylesheet" href="SideBar.css">
+
+
+    <link rel="stylesheet" href="FSD_CSS.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        header, nav, main, footer {
+            margin-left: 20px;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        p, li {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .content-layout {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin: 40px 0;
+            gap: 20px;
+        }
+
+        .content-layout .images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .content-layout .images img {
+            width: 70%;
+            border-radius: 10px;
+            animation: elasticIn 1s ease-out;
+            transition: transform 0.3s ease;
+        }
+
+        .content-layout .images img:hover {
+            transform: scale(1.1);
+        }
+
+        .content-layout .text {
+            flex: 2;
+            text-align: justify;
+            margin: 0 20px;
+            padding-right: 10px;
+            overflow-y: auto;
+            height: 300px;
+        }
+
+        .donate-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        .donate-button:hover {
+            background-color: #45a049;
+        }
+
+        @keyframes elasticIn {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Login Button on Top-Right */
+        .login-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 1em;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Profile Popup */
+        .profile-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .profile-popup.active {
+            display: block;
+        }
+
+        .profile-info {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+ 
+.logout-button, .back-button {
+            background-color: #f44336;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 10px;
+            width: 100%;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-button:hover, .back-button:hover {
+            background-color: #e53935;
+        }
+
+        /* Animation for Fade In */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <!-- Login/Signup Button on Top-Right -->
+    <a href="login.html" class="login-button" id="login-button" style="background-color:#f44336; cursor: pointer;">Login / Sign Up</a>
+    
+    <header>
+        <h1>Community Food Donation Platform</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="donate.html">Donate Food</a>
+            <a href="Need_Food.html">Need Food</a>
+            <a href="donations.html">View Donations</a>
+            <a href="Food_Request.html">Food Request</a>
+            <a href="foodCrisis.html">Why to donate</a>
+            <a href="team.html">Team Behind</a>
+            <div class="hamburger" onclick="toggleSidebar()">&#9776;</div>
+
+    <div class="sidebar" id="sidebar">
+        <a href="#">Setting</a>
+        <a href="#">Contact Us</a>
+        <a href="complaint.html">Report Issue</a>
+         
+    </div>
+
+    <div class="content" id="main-content">
+        
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+        }
+    </script>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to the Food Donation Platform</h2>
+            <div class="content-layout">
+                <div class="images">
+                    <img src="image1.jpg" alt="People donating food fig 1">
+                    <img src="image2.jpg" alt="People donating food fig 2">
+                </div>
+                <div class="text">
+                    <p>
+                        By joining our platform, you can help tackle two major issues: food waste
+                        and hunger. Our platform works by connecting people and organizations 
+                        who have surplus food (donors) with individuals and groups who are in need
+                        of food (recipients). This makes it easy for anyone with extra food to
+                        donate it, helping prevent that food from going to waste. Donating food
+                        through our platform is not only a safe and simple process, but it also
+                        plays a vital role in addressing food insecurity. By contributing, 
+                        you’re helping to provide nutritious meals for families, individuals,
+                        and communities who might otherwise go without. You are also supporting
+                        a more sustainable environment, as less food waste means fewer resources
+                        used in producing, transporting, and disposing of uneaten food. 
+                        Together, we can work towards a future where no food is wasted and no 
+                        one goes hungry, making a positive impact on both people and the planet.
+                    </p>
+                    <p>
+                        Our platform connects people who have surplus food with those in need.
+                        Individuals, restaurants, cafes, grocery stores, event organizers, 
+                        community groups, and farmers can all donate food, whether it’s leftover
+                        from an event, unsold at the end of the day, near-expiry items, or excess
+
+Raj, [03-02-2025 14:01]
+produce. Donors can expect an easy donation process, assurance that their
+                        food reaches the right people, and possible recognition or incentives
+                        like certificates. The recipients include individuals, families, shelters,
+                        and community kitchens who benefit from the donated food. Volunteers and 
+                        other users can also engage by helping with logistics or spreading awareness.
+                        Platform administrators ensure smooth operations and track donations, 
+                        while government agencies and non-profit organizations help with food safety 
+                        and regulations. By donating, you’re reducing food waste and helping feed those
+                        in need, all while participating in a simple and transparent process.
+                    </p>
+                </div>
+                <div class="images">
+                    <img src="image3.jpg" alt="People donating food fig 3">
+                    <img src="image4.jpg" alt="People donating food fig 4">
+                </div>
+            </div>
+
+            <a href="donate.html" class="donate-button">Donate Food</a>
+            <a href="Need_Food.html" class="donate-button">Request Food</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Community Food Donation Platform. All rights reserved.</p>
+    </footer>0
+
+    <!-- Profile Popup -->
+    <div class="profile-popup" id="profile-popup">
+        <div class="profile-info" id="profile-info">
+            <!-- User details will be shown here -->
+        </div>
+        <button class="back-button" onclick="goBack()">Back to Home</button>
+        <button class="logout-button" onclick="logout()">Logout</button>
+   </div>
+
+    <script>
+       document.addEventListener("DOMContentLoaded", async () => {
+            const loginButton = document.getElementById('login-button');
+            const profilePopup = document.getElementById('profile-popup');
+            const profileInfo = document.getElementById('profile-info');
+
+            try {
+                const response = await fetch("/api/auth/check-session");
+                const data = await response.json();
+                
+                if (data.loggedIn) {
+                    loginButton.textContent = 'Profile';
+                    loginButton.href = '#';
+                    loginButton.onclick = () => showProfile();
+                    profileInfo.textContent = Name: ${data.user.name}, Mobile: ${data.user.mobile}, Role: ${data.user.role};
+                } else {
+                    loginButton.onclick = () => window.location.href = 'login.html';
+                }
+            } catch (error) {
+                console.error("Error checking session:", error);
+            }
+        });
+
+        function showProfile() {
+            document.getElementById('profile-popup').classList.add('active');
+        }
+
+        async function logout() {
+            try {
+                await fetch("/api/auth/logout", { method: "POST" });
+                window.location.reload();
+            } catch (error) {
+                console.error("Logout failed:", error);
+            }
+        }
+
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

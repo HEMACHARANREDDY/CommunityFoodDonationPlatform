@@ -1,0 +1,436 @@
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background: linear-gradient(135deg, #000428, #004e92); /* Dynamic and modern gradient background */
+    line-height: 1.6;
+}
+
+header {
+    background-color:rgba(30, 45, 65, 0.95);
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #2575fc;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 1.5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffdd40;
+    text-decoration: underline;
+}
+
+#donate {
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 2rem auto;
+    max-width: 800px;
+    border-top: 3px solid #2575fc;
+     
+}
+
+#donate h2 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    color: #003366;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+form label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #444;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #004e92;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 78, 146, 0.5);
+}
+
+form button {
+    padding: 1.2rem 3rem;
+    background: #ffdd40;
+    border: none;
+    color: #003366;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+form button:hover {
+    transform: scale(1.1);
+    background-color: #ffd000;
+}
+
+#list {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.donation-item {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.donation-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.donation-item button {
+    padding: 0.8rem 1.5rem;
+    background: #e63946;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.donation-item button:hover {
+    transform: scale(1.1);
+    background-color: #d62839;
+}
+
+#home {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    padding: 5rem 3rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 15px;
+    margin-top: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#home h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    animation: elasticIn 1s ease-out;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#home p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 1.2s ease-out;
+    line-height: 2.0;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #ffdd40;
+    color: #003366;
+    padding: 1.2rem 2.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    background-color: #ffd000;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 3.5rem;
+    padding: 0 2rem;
+}
+
+.team-member {
+    text-align: center;
+    width: 22%;
+    max-width: 280px;
+    margin-bottom: 2.5rem;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+.team-member img:hover {
+    transform: scale(1.1);
+}
+
+.team-member h3 {
+    font-size: 1.6em;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #2d3e50;
+}
+
+.team-member p {
+    font-size: 1.1em;
+    color: #666;
+    padding: 0 1.5rem 1.5rem;
+}
+
+footer {
+    background: rgba(30, 45, 65, 0.95);
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3.5rem;
+    font-size: 1.1rem;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    border-top: 2px solid #2575fc;
+}
+
+footer p {
+    margin: 0;
+}
+ 
+/* General Styling */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.donation-card {
+    width: 320px;
+    height: 200px;
+    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Sleek gradient */
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.donation-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Card Content - Flip Effect */
+.donation-card .card-front {
+    transition: transform 0.6s ease-in-out;
+}
+
+.donation-card:hover .card-front {
+    transform: rotateY(180deg);
+}
+
+.donation-card .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #003366; /* Darker back to highlight */
+    padding: 15px;
+    color: white;
+    border-radius: 12px;
+    transform: rotateY(180deg);
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.donation-card:hover .card-back {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Donation Card Title and Info */
+.donation-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.donation-card p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: lighter;
+}
+
+.donation-card .donation-status {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* Button */
+.donation-card button {
+    padding: 0.8rem 2rem;
+    background-color: #ffdd40;
+    color: #003366;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.donation-card button:hover {
+    transform: scale(1.1);
+    background-color: #ffd000;
+}
+
+.donation-card img {
+    width: 80%;
+    max-height: 70px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+}
+/* General Styling for the "Take Food" Form */
+#request-food {
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 2rem auto;
+    max-width: 800px;
+    border-top: 3px solid #2575fc;
+}
+
+#request-food h2 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    color: #003366;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Form Labels */
+form label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Form Inputs and Textareas */
+form input, form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+/* Focus Effect on Input Fields */
+form input:focus, form textarea:focus {
+    border-color: #004e92;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 78, 146, 0.5);
+}
+
+/* Submit Button Styling */
+form button {
+    padding: 1.2rem 3rem;
+    background: #ffdd40;
+    border: none;
+    color: #003366;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Effect on Button */
+form button:hover {
+    transform: scale(1.1);
+    background-color: #ffd000;
+}
+
+/* Adding Padding and Border Styling */
+form input, form textarea, form button {
+    font-size: 1.1rem;
+}
+/* Ensure the input fields and button fit well inside the form */
+form input, form textarea, form button {
+    width: 100%;
+    max-width: 450px;
+    margin: 0.5rem auto;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    #request-food {
+        padding: 2rem;
+    }
+
+    #request-food h2 {
+        font-size: 2.4rem;
+    }
+
+    form input, form textarea {
+        font-size: 1rem;
+    }
+
+    form button {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+    }
+}

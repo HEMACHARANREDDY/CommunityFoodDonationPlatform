@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starvation and Hunger - Community Food Donation Platform</title>
+    <link rel="stylesheet" href="SideBar.css">
+
+    <link rel="stylesheet" href="FSD_CSS.css">
+    <style>
+        header{
+            background-color:deepskyblue;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+        h2 {
+            color: #666;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #444;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        /* Login Button on Top-Right */
+        .login-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 1em;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Profile Popup */
+        .profile-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .profile-popup.active {
+            display: block;
+        }
+
+        .profile-info {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .logout-button, .back-button {
+            background-color: #f44336;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 10px;
+            width: 100%;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-button:hover, .back-button:hover {
+            background-color: #e53935;
+        }
+
+        /* Animation for Fade In */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login/Signup Button on Top-Right -->
+    <a href="login.html" class="login-button" id="login-button" style="background-color: cyan;">Login / Sign Up</a>
+    <header>
+        <h1>Community Food Donation Platform</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="donate.html">Donate Food</a>
+            <a href="Need_Food.html">Need Food</a>
+            <a href="donations.html">View Donations</a>
+            <a href="Food_Request.html">Food Request</a>
+            <a href="foodCrisis.html">Why to Donate</a>
+            <a href="team.html">Team Behind</a>
+            <div class="hamburger" onclick="toggleSidebar()">&#9776;</div>
+            <div class="sidebar" id="sidebar">
+                <a href="#">Setting</a>
+                <a href="#">Contact Us</a>
+                <a href="complaint.html">Report Issue</a>
+
+            </div>
+        
+            <div class="content" id="main-content">
+                
+            </div>
+        
+            <script>
+                function toggleSidebar() {
+                    const sidebar = document.getElementById("sidebar");
+                    sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+                }
+            </script>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Starvation and Hunger in India</h1>
+        <div class="image-container">
+            <img src="Picture1.jpg" alt="Starvation and Hunger">
+        </div>
+        <p>Starvation, a severe form of food deprivation, has historically been a pressing issue in many parts of the world. Hunger is a condition in which adults and children can't get food all the time, have to eat less, eat limitedly, and often go without food. The troubled or painful sensation brought on by a lack of food.</p>
+
+        <h2>Hunger in India</h2>
+        <div class="image-container">
+            <img src="Picture2.jpg" alt="Hunger in India">
+        </div>
+        <p>India, with a population of over 1.3 billion (according to the 2011 census), has seen tremendous growth in the past two decades but slipped to the 101st position in the Global Hunger Index (GHI) 2021 of 116 countries, from its 2020 position of 94th. Hunger in India is a complex issue. It is widespread and the causes are different across various regions. It is very sad to see a country like India suffering despite having a GDP thrice that of some countries.</p>
+
+        <h2>Hunger and Starvation in the World</h2>
+        <div class="image-container">
+            <img src="Picture3.jpg" alt="Global Hunger Statistics">
+        </div>
+        <p>Hunger and starvation remain critical global challenges, affecting millions of people despite advancements in food production and technology. According to the Global Hunger Index (GHI), approximately 735 million people worldwide faced chronic hunger in 2022, primarily in developing and underdeveloped regions. Sub-Saharan Africa, South Asia, and parts of the Middle East bear the brunt of this crisis due to poverty, conflict, and weak governance.</p>
+
+        <p>Malnutrition is a significant aspect of global hunger, with millions suffering from "hidden hunger," caused by a lack of essential vitamins and minerals. This contributes to stunted growth in children and weakened immune systems, leading to long-term health and economic consequences.</p>
+
+        <div class="image-container">
+            <img src="Picture4.jpg" alt="Solutions to Hunger">
+        </div>
+        <p>The root causes of hunger are multifaceted: poverty, inequality, conflict, climate change, and economic instability. War and displacement in regions like Syria, Yemen, and parts of Africa exacerbate food insecurity. Climate change-induced droughts, floods, and other extreme weather events disrupt agriculture and food supply chains globally.</p>
+
+        <p>Food wastage is also a global issue, with over 30% of food produced wasted annually, enough to feed millions. Addressing hunger requires global cooperation, effective governance, and sustainable agricultural practices to ensure equitable food distribution and long-term solutions.</p>
+        <h2>Conclusion</h2>
+        <p>Hunger and starvation remain pressing global challenges, despite advancements in agriculture and food systems. Millions of people, particularly in developing regions, continue to suffer from chronic hunger and malnutrition, driven by factors such as poverty, inequality, conflict, climate change, and inefficiencies in food distribution.</p>
+
+        <p>While efforts by international organizations, governments, and NGOs have made progress in combating hunger, much work remains to achieve Sustainable Development Goal 2: Zero Hunger. Addressing this issue requires a multi-pronged approach, including investing in sustainable agriculture, improving food distribution systems, reducing food wastage, and strengthening social safety nets.</p>
+    </div>
+
+    <footer>
+        &copy; 2025 Starvation Awareness Initiative
+    </footer>
+
+    <!-- Profile Popup -->
+    <div class="profile-popup" id="profile-popup">
+        <div class="profile-info" id="profile-info">
+            <!-- User details will be shown here -->
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+        <button class="logout-button" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        // Check if user is logged in
+        const user = JSON.parse(localStorage.getItem('user'));
+        const loginButton = document.getElementById('login-button');
+        const profilePopup = document.getElementById('profile-popup');
+        const profileInfo = document.getElementById('profile-info');
+
+        // If user is logged in, change Login button to Profile
+        if (user) {
+            loginButton.textContent = 'Profile';
+            loginButton.href = '#';
+            loginButton.onclick = () => showProfile();
+            profileInfo.textContent = Name: ${user.name}, Mobile: ${user.mobile}, Role: ${user.role};
+        } else {
+            loginButton.onclick = () => window.location.href = 'login.html';
+        }
+
+        // Show profile popup
+        function showProfile() {
+            profilePopup.classList.add('active');
+        }
+
+        // Logout function
+        function logout() {
+            // Clear user data from localStorage
+            localStorage.removeItem('user');
+            // Reset login button to Login/SignUp
+            loginButton.textContent = 'Login / Sign Up';
+            loginButton.href = 'login.html';
+            // Hide profile popup
+            profilePopup.classList.remove('active');
+        }
+
+        // Back button function
+        function goBack() {
+            window.location.href = 'foodCrisis.html';
+        }
+    </script>
+</body>
+</html>

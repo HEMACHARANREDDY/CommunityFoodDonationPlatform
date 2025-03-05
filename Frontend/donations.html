@@ -1,0 +1,183 @@
+Raj, [03-02-2025 14:09]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Donations - Community Food Donation Platform</title>
+    <link rel="stylesheet" href="SideBar.css">
+
+    <link rel="stylesheet" href="FSD_CSS.css">
+    <style>
+        /* Add necessary styles for login/profile button and popup */
+        .login-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 1em;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: #45a049;
+        }
+
+        .profile-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .profile-popup.active {
+            display: block;
+        }
+
+        .profile-info {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .logout-button, .back-button {
+            background-color: #f44336;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 10px;
+            width: 100%;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-button:hover, .back-button:hover {
+            background-color: #e53935;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login/Signup Button on Top-Right -->
+    <a href="login.html" class="login-button" id="login-button" style="background-color: cyan;">Login / Sign Up</a>
+
+    <header>
+        <h1>Community Food Donation Platform</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="donate.html">Donate Food</a>
+            <a href="Need_Food.html">Need Food</a>
+            <a href="donations.html">View Donations</a>
+            <a href="Food_Request.html">Food Request</a>
+            <a href="foodCrisis.html">Why to Donate</a>
+            <a href="team.html">Team Behind</a>
+            <div class="hamburger" onclick="toggleSidebar()">&#9776;</div>
+            <div class="sidebar" id="sidebar">
+                <a href="#">Setting</a>
+                <a href="#">Contact Us</a>
+                <a href="complaint.html">Report Issue</a>
+
+            </div>
+        
+            <div class="content" id="main-content">
+                
+            </div>
+        
+            <script>
+                function toggleSidebar() {
+                    const sidebar = document.getElementById("sidebar");
+                    sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+                }
+            </script>
+        </nav>
+    </header>
+
+    <main>
+        <section id="list">
+            <h2 style="color: aliceblue;">Available Donations</h2>
+            <div id="donationList" class="card-container">
+                <!-- Donations will appear here as cards -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Community Food Donation Platform. All rights reserved.</p>
+    </footer>
+
+Raj, [03-02-2025 14:09]
+<!-- Profile Popup -->
+    <div class="profile-popup" id="profile-popup">
+        <div class="profile-info" id="profile-info">
+            <!-- User details will be shown here -->
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+        <button class="logout-button" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        // Check if user is logged in
+        const user = JSON.parse(localStorage.getItem('user'));
+        const loginButton = document.getElementById('login-button');
+        const profilePopup = document.getElementById('profile-popup');
+        const profileInfo = document.getElementById('profile-info');
+
+        // If user is logged in, change Login button to Profile
+        if (user) {
+            loginButton.textContent = 'Profile';
+            loginButton.href = '#';
+            loginButton.onclick = () => showProfile();
+            profileInfo.textContent = Name: ${user.name}, Mobile: ${user.mobile}, Role: ${user.role};
+        } else {
+            loginButton.onclick = () => window.location.href = 'login.html';
+        }
+
+        // Show profile popup
+        function showProfile() {
+            profilePopup.classList.add('active');
+        }
+
+        // Logout function
+        function logout() {
+            // Clear user data from localStorage
+            localStorage.removeItem('user');
+            // Reset login button to Login/SignUp
+            loginButton.textContent = 'Login / Sign Up';
+            loginButton.href = 'login.html';
+            // Hide profile popup
+            profilePopup.classList.remove('active');
+        }
+
+        // Back button function
+        function goBack() {
+            window.location.href = 'donations.html';
+        }
+    </script>
+
+    <script src="FSD_JS.js"></script>
+</body>
+</html>

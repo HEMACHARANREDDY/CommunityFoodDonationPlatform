@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Food Donation Platform</title>
+    <link rel="stylesheet" href="SideBar.css">
+
+    <link rel="stylesheet" href="FSD_CSS.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        header, nav, main, footer {
+            margin-left: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .team-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .team-member {
+            text-align: center;
+            width: 22%;
+        }
+        .team-member img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .team-member h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .team-member p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        /* Login Button on Top-Right */
+        .login-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 1em;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Profile Popup */
+        .profile-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .profile-popup.active {
+            display: block;
+        }
+
+        .profile-info {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .logout-button, .back-button {
+            background-color: #f44336;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 10px;
+            width: 100%;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-button:hover, .back-button:hover {
+            background-color: #e53935;
+        }
+
+        /* Animation for Fade In */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login/Signup Button on Top-Right -->
+    <a href="login.html" class="login-button" id="login-button" style="background-color: cyan;">Login / Sign Up</a>
+    <header>
+        <h1>Team Behind the Platform</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="donate.html">Donate Food</a>
+            <a href="Need_Food.html">Need Food</a>
+            <a href="donations.html">View Donations</a>
+            <a href="Food_Request.html">Food Request</a>
+            <a href="foodCrisis.html">Why to donate</a>
+            <a href="team.html">Team Behind</a>
+            <div class="hamburger" onclick="toggleSidebar()">&#9776;</div>
+            <div class="sidebar" id="sidebar">
+                <a href="#">Setting</a>
+                <a href="#">Contact Us</a>
+                <a href="complaint.html">Report Issue</a>
+
+            </div>
+        
+            <div class="content" id="main-content">
+                
+            </div>
+        
+            <script>
+                function toggleSidebar() {
+                    const sidebar = document.getElementById("sidebar");
+                    sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+                }
+            </script>
+        </nav>
+    </header>
+
+    <main>
+        <section id="team">
+            <h2 style="color: aliceblue;">Meet Our Team</h2>
+            <div class="team-container">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <img src="team1.jpg" alt="Team Member 1">
+                    <h3>Udit Raj</h3>
+                    <p>Founder & Tech Lead</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <img src="team2.jpg" alt="Team Member 2">
+                    <h3>Hema Charan</h3>
+                    <p>CEO</p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <img src="team3.jpg" alt="Team Member 3">
+                    <h3>Kotla Dheeraj</h3>
+                    <p>Operations Manager</p>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <img src="team4.jpg" alt="Team Member 4">
+                    <h3>Nihar Reddy</h3>
+                    <p>Community Outreach</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Community Food Donation Platform. All rights reserved.</p>
+    </footer>
+
+    <!-- Profile Popup -->
+    <div class="profile-popup" id="profile-popup">
+        <div class="profile-info" id="profile-info">
+            <!-- User details will be shown here -->
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+        <button class="logout-button" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        // Check if user is logged in
+        const user = JSON.parse(localStorage.getItem('user'));
+        const loginButton = document.getElementById('login-button');
+        const profilePopup = document.getElementById('profile-popup');
+        const profileInfo = document.getElementById('profile-info');
+
+        // If user is logged in, change Login button to Profile
+        if (user) {
+            loginButton.textContent = 'Profile';
+            loginButton.href = '#';
+            loginButton.onclick = () => showProfile();
+            profileInfo.textContent = Name: ${user.name}, Mobile: ${user.mobile}, Role: ${user.role};
+        } else {
+            loginButton.onclick = () => window.location.href = 'login.html';
+        }
+
+        // Show profile popup
+        function showProfile() {
+            profilePopup.classList.add('active');
+        }
+
+        // Logout function
+        function logout() {
+            // Clear user data from localStorage
+            localStorage.removeItem('user');
+            // Reset login button to Login/SignUp
+            loginButton.textContent = 'Login / Sign Up';
+            loginButton.href = 'login.html';
+            // Hide profile popup
+            profilePopup.classList.remove('active');
+        }
+        // Back button function
+        function goBack() {
+            window.location.href = 'team.html';
+        }
+    </script>
+</body>
+</html>
